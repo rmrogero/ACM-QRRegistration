@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="QR_lib/bridj-0.6.3-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="QR_lib/core-2.1.jar"/>
+	<classpathentry kind="lib" path="QR_lib/dx-1.7.jar"/>
+	<classpathentry kind="lib" path="QR_lib/javase-2.1.jar"/>
+	<classpathentry kind="lib" path="QR_lib/slf4j-api-1.7.2.jar"/>
+	<classpathentry kind="lib" path="QR_lib/webcam-capture-0.3.10-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
