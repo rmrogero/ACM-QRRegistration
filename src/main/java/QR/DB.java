@@ -53,7 +53,8 @@ public class DB {
                member.setIdNum(res.getInt("idNum"));
                member.setCourse(res.getString("course"));
                member.setPosition(res.getString("position"));   
-               if(member.getIdNum()==201011202) member.setPosition("Im Awesome");
+               //ch if(member.getIdNum()==201011202) member.setPosition("Im Awesome");
+               if(member.getIdNum()==201011266) member.setPosition("Im Awesome");
            }
         } catch (SQLException ex) {
             ex.printStackTrace();
