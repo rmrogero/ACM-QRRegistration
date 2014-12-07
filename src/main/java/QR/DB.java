@@ -9,14 +9,14 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class DB {
-    public Connection connect() throws Exception{
+    public static Connection connect() throws Exception{
         Connection conn = null;
         String url;
         Statement stmt;
         ResultSet rs;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            url = "jdbc:mysql://localhost/acm";
+            Class.forName("org.sqlite.JDBC");
+            url = "jdbc:sqlite:qr.db";
             conn = DriverManager.getConnection(url, "root", "");
         } catch (SQLException exc) {
             JOptionPane.showMessageDialog(null, "Error in database connection. 1");
@@ -24,43 +24,37 @@ public class DB {
         return conn;
     }
     
-    public void insertSample(String aQuery) throws Exception {
+    public void register(String uid, String name) throws Exception {
         Connection conn = null;
         PreparedStatement ps = null;
-        
         try {
             conn = connect();
-            String query = "insert into registration values(" + aQuery + ")";
+            String query = "insert into members(uid, name) values('"+uid+"', '"+name+"')";
             ps = conn.prepareStatement(query);
             ps.executeUpdate();
         } catch (SQLException ex) {
+        	ex.printStackTrace();
         } finally {
             ps.close();
             conn.close();
         }
     }
     
-    Member getById(int idNum) throws Exception {
+    static String getName(String uid) throws Exception {
         Connection conn = null;
-        Member member = new Member();
+        String name = "";
         try {
            conn = connect();
-           String query = "select name, idNum, course, position from members where idNum="+idNum;
+           String query = "select name from members where uid="+uid;
            Statement st = conn.createStatement();
            ResultSet res = st.executeQuery(query);
            while(res.next()){
-               member.setName(res.getString("name"));
-               member.setIdNum(res.getInt("idNum"));
-               member.setCourse(res.getString("course"));
-               member.setPosition(res.getString("position"));   
-               //ch if(member.getIdNum()==201011202) member.setPosition("Im Awesome");
-               if(member.getIdNum()==201011266) member.setPosition("Im Awesome");
+        	   name = res.getString("name");
            }
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
-            conn.close();
         }
-        return member;
+        return name;
     }
 }
