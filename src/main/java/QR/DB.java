@@ -9,7 +9,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 public class DB {
-    public static Connection connect() throws Exception{
+public static Connection connect() throws Exception{
         Connection conn = null;
         String url;
         Statement stmt;
@@ -18,7 +18,7 @@ public class DB {
             Class.forName("org.sqlite.JDBC");
             url = "jdbc:sqlite:qr.db";
             conn = DriverManager.getConnection(url, "root", "");
-        } catch (SQLException exc) {
+      } catch (SQLException exc) {
             JOptionPane.showMessageDialog(null, "Error in database connection. 1");
         }
         return conn;
