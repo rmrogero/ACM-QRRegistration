@@ -45,7 +45,7 @@ public static Connection connect() throws Exception{
         String name = "";
         try {
            conn = connect();
-           String query = "select name from members where uid="+uid;
+           String query = "SELECT name FROM members WHERE uid="+uid;
            Statement st = conn.createStatement();
            ResultSet res = st.executeQuery(query);
            while(res.next()){
