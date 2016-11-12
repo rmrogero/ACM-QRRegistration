@@ -55,7 +55,7 @@ public class ACMQR extends JFrame implements Runnable, ThreadFactory {
         textarea.setLayout(null);
         textarea.setPreferredSize(size);
         
-        frame = new JFrame("ACM QR");
+        frame = new JFrame("ACMQR");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setMinimumSize(new Dimension(600, 600));
         frame.getContentPane().setLayout(null);
