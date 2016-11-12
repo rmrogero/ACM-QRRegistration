@@ -29,7 +29,7 @@ public static Connection connect() throws Exception{
         PreparedStatement ps = null;
         try {
             conn = connect();
-            String query = "insert into members(uid, name) values('"+uid+"', '"+name+"')";
+            String query = "INSERT into members(uid, name) values('"+uid+"', '"+name+"')";
             ps = conn.prepareStatement(query);
             ps.executeUpdate();
         } catch (SQLException ex) {
