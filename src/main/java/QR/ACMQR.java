@@ -35,7 +35,7 @@ public class ACMQR extends JFrame implements Runnable, ThreadFactory {
     private JFrame frame;
     private JLabel label = new JLabel();	
     
-    public void init() {
+    public void int() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         getContentPane().setLayout(null);
         Dimension size = WebcamResolution.QVGA.getSize();
